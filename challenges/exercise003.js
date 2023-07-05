@@ -29,14 +29,19 @@ export function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
   let count = 0;
-  menu.forEach((item) =>
-    item.ingredients.indexOf(ingredient) >= 0 ? count++ : count
-  );
+  for (let item of menu) {
+    if (item.ingredients.includes(ingredient)) count++;
+  }
+  if (count === 0) {
+    return false;
+  } else {
+    return true;
+  }
 }
 
 export function duplicateNumbers(arr1, arr2) {
-  //if (arr1 === undefined) throw new Error("arr1 is required");
-  //if (arr2 === undefined) throw new Error("arr2 is required");
+  if (arr1 === undefined) throw new Error("arr1 is required");
+  if (arr2 === undefined) throw new Error("arr2 is required");
   let arr3 = [];
   for (let i = 0; i < arr1.length; i++)
     for (
