@@ -25,7 +25,9 @@ export function addVAT(originalPrice, vatRate) {
 export function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  // Add your code here!
+  return (
+    Math.round((originalPrice - (originalPrice * reduction) / 100) * 100) / 100
+  );
 }
 
 export function getMiddleCharacter(str) {
