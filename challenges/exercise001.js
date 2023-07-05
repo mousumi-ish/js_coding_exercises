@@ -32,30 +32,47 @@ export function getSalePrice(originalPrice, reduction) {
 
 export function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  // Add your code here!
+  return str.length % 2 == 0
+    ? str.charAt(str.length / 2 - 1) + str.charAt(str.length / 2)
+    : str.charAt(str.length / 2);
 }
 
 export function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  // Add your code here!
+  let reverseStr = "";
+  for (let i = word.length - 1; i >= 0; reverseStr += word[i--]);
+  return reverseStr;
 }
 
 export function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Add your code here!
+  let reverseWords = [];
+  for (let i = 0; i < words.length; reverseWords.push(reverseWord(words[i++])));
+
+  return reverseWords;
 }
 
 export function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  // Add your code here!
+  let count = 0;
+  for (
+    let i = 0;
+    i < users.length;
+    count += Number(users[i++].type === "Linux")
+  );
+  return count;
 }
 
 export function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  // Add your code here!
+  let total = 0;
+  for (let i = 0; i < scores.length; total += scores[i++]);
+  return Math.round((total / scores.length) * 100) / 100;
 }
 
 export function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  // Add your code here!
+  return n % 3 !== 0 && n % 5
+    ? n
+    : (n % 3 ? "" : "fizz") + (n % 5 ? "" : "buzz");
 }
