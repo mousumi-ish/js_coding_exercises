@@ -4,8 +4,8 @@
 
 export function printColours(colours) {
   if (!colours) throw new Error("colour is required");
-  // Your solution using the spread operator here!
   const newcolours = [...colours];
+  return newcolours;
 }
 
 export function shoppingList(list, newItem) {
