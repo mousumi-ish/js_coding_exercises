@@ -105,4 +105,33 @@ describe("hexToRGB", () => {
     const hexStr = "#AA3464";
     expect(hexToRGB(hexStr)).toEqual("rgb(170,52,100)");
   });
+
+  describe("findWinner", () => {
+    test(" return X if player X has won, 0 if the player 0 has won", () => {
+      const board = [
+        ["X", "0", null],
+        ["X", null, "0"],
+        ["X", null, "0"],
+      ];
+      expect(findWinner(board)).toBe("X");
+    });
+
+    test(" return X if player X has won, 0 if the player 0 has won", () => {
+      const board = [
+        ["X", "0", "0"],
+        ["0", null, "0"],
+        ["X", null, "0"],
+      ];
+      expect(findWinner(board)).toBe("0");
+    });
+
+    test(" return X if player X has won, 0 if the player 0 has won", () => {
+      const board = [
+        ["X", "0", "X"],
+        ["0", null, "0"],
+        ["X", null, "0"],
+      ];
+      expect(findWinner(board)).toBe("Null");
+    });
+  });
 });
