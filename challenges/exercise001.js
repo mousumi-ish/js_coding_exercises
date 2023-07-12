@@ -46,7 +46,7 @@ export function reverseWord(word) {
 
 export function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  let reverseWords = [];
+  const reverseWords = [];
   for (let i = 0; i < words.length; reverseWords.push(reverseWord(words[i++])));
 
   return reverseWords;
