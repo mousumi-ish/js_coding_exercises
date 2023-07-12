@@ -72,7 +72,13 @@ export function getMeanScore(scores) {
 
 export function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  return n % 3 !== 0 && n % 5
-    ? n
-    : (n % 3 ? "" : "fizz") + (n % 5 ? "" : "buzz");
+  if (n % 3 === 0 && n % 5 === 0) {
+    return "fizzbuzz";
+  } else if (n % 5 === 0) {
+    return "buzz";
+  } else if (n % 3 === 0) {
+    return "fizz";
+  } else {
+    return n;
+  }
 }
