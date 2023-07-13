@@ -29,11 +29,7 @@ export function checkIngredients(menu, ingredient) {
   for (let item of menu) {
     if (item.ingredients.includes(ingredient)) count++;
   }
-  if (count === 0) {
-    return false;
-  } else {
-    return true;
-  }
+  return count > 0;
 }
 
 export function duplicateNumbers(arr1, arr2) {
