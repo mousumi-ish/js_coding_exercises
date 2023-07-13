@@ -17,9 +17,6 @@ export function getBusNumbers(people) {
 export function countSheep(arr) {
   if (arr === undefined) throw new Error("arr is required");
   let animalInFarm = "sheep";
-  let count = 0;
-  for (let i = 0; i < arr.length; count += Number(arr[i++] === animalInFarm));
-  return count;
   return arr.filter((animalInFarm) => animalInFarm === "sheep").length;
 }
 

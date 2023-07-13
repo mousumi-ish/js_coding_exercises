@@ -1,8 +1,5 @@
 export function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
-  let squareNum = [];
-  for (let i = 0; i < nums.length; squareNum[i] = Math.pow(nums[i++], 2));
-  return squareNum;
   return nums.map((num) => Math.pow(num, 2));
 }
 
